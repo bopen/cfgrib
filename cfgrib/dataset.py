@@ -156,6 +156,14 @@ def enforce_unique_attributes(
     return attributes
 
 
+def to_grib_date_time(datetime_iso, keys=('dataDate', 'dataTime')):
+    # type: (str) -> T.Dict[str, int]
+    date_key, time_key = keys
+    date = int(datetime_iso[:10].replace('-', ''))
+    time = int(datetime_iso[11:16].replace(':', ''))
+    return {date_key: date, time_key: time}
+
+
 def from_grib_date_time(message, keys=('dataDate', 'dataTime')):
     # type: (T.Mapping, str, str) -> int
     """
@@ -488,13 +496,6 @@ class Dataset(object):
         self.dimensions = dims  # type: T.Dict[str, T.Optional[int]]
         self.variables = vars  # type: T.Dict[str, Variable]
         self.attributes = attrs  # type: T.Dict[str, T.Any]
-
-
-def to_grib_date_time(datetime):
-    datetime_iso = str(datetime)
-    dataDate = float(datetime_iso[:10].replace('-', ''))
-    dataTime = float(datetime_iso[11:16].replace(':', ''))
-    return dataDate, dataTime
 
 
 def build_grib_date_time(dataset, keys=TIME_KEYS):

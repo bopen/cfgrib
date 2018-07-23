@@ -13,11 +13,15 @@ SAMPLE_DATA_FOLDER = os.path.join(os.path.dirname(__file__), 'sample-data')
 TEST_DATA = os.path.join(SAMPLE_DATA_FOLDER, 'era5-levels-members.grib')
 
 
+def test_to_grib_date_time():
+    res = dataset.to_grib_date_time('2016-07-06T19:44:00')
+
+    assert res.get('dataDate') == 20160706
+    assert res.get('dataTime') == 1944
+
+
 def test_from_grib_date_time():
-    message = {
-        'dataDate': 20160706,
-        'dataTime': 1944,
-    }
+    message = dataset.to_grib_date_time('2016-07-06T19:44:00')
     result = dataset.from_grib_date_time(message)
 
     assert result == 1467834240
