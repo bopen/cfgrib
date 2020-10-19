@@ -51,7 +51,7 @@ TEST_FILES = {
             'grid': ['3', '3'],
             'format': 'grib',
         },
-        193,
+        192,
     ],
     'seasonal-original-pressure-levels-ecmwf': [
         'seasonal-original-pressure-levels',
@@ -98,7 +98,7 @@ TEST_FILES = {
             'grid': ['3', '3'],
             'format': 'grib',
         },
-        193,
+        192,
     ],
     'seasonal-postprocessed-single-levels-ecmwf': [
         'seasonal-postprocessed-single-levels',
@@ -112,7 +112,7 @@ TEST_FILES = {
             'grid': ['3', '3'],
             'format': 'grib',
         },
-        212,
+        211,
     ],
     'seasonal-monthly-single-levels-monthly_mean-ecmwf': [
         'seasonal-monthly-single-levels',
@@ -126,7 +126,7 @@ TEST_FILES = {
             'grid': ['3', '3'],
             'format': 'grib',
         },
-        212,
+        211,
     ],
     'seasonal-monthly-single-levels-ensemble_mean-ecmwf': [
         'seasonal-monthly-single-levels',
@@ -140,7 +140,7 @@ TEST_FILES = {
             'grid': ['3', '3'],
             'format': 'grib',
         },
-        212,
+        211,
     ],
     'seasonal-monthly-single-levels-hindcast_climate_mean-ecmwf': [
         'seasonal-monthly-single-levels',
@@ -154,7 +154,7 @@ TEST_FILES = {
             'grid': ['3', '3'],
             'format': 'grib',
         },
-        212,
+        211,
     ],
 }
 
