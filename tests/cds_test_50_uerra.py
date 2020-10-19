@@ -7,41 +7,85 @@ import cdscommon
 
 
 TEST_FILES = {
-    'era5-land-reanalysis': [
-        'reanalysis-era5-land',
+    'uerra-europe-height-levels-reanalysis': [
+        'reanalysis-uerra-europe-height-levels',
         {
             'format': 'grib',
-            'variable': '2m_dewpoint_temperature',
+            'variable': 'pressure',
+            'height_level': '15_m',
             'year': '2017',
             'month': '01',
             'day': '01',
-            'time': ['00:00', '01:00'],
+            'time': ['00:00', '06:00'],
         },
-        197,
+        231,
     ],
-    'era5-land-monthly-means-monthly_averaged_reanalysis': [
-        'reanalysis-era5-land-monthly-means',
+    'uerra-europe-single-levels-reanalysis-mescan_surfex': [
+        'reanalysis-uerra-europe-single-levels',
         {
             'format': 'grib',
-            'product_type': 'monthly_averaged_reanalysis',
-            'variable': '2m_dewpoint_temperature',
-            'year': '2017',
-            'month': ['01', '02'],
-            'time': '00:00',
-        },
-        203,
-    ],
-    'era5-land-monthly-means-monthly_averaged_reanalysis_by_hour_of_day': [
-        'reanalysis-era5-land-monthly-means',
-        {
-            'format': 'grib',
-            'product_type': 'monthly_averaged_reanalysis_by_hour_of_day',
-            'variable': '2m_dewpoint_temperature',
+            'origin': 'mescan_surfex',
+            'variable': '10m_wind_direction',
             'year': '2017',
             'month': '01',
-            'time': ['00:00', '01:00'],
+            'day': '01',
+            'time': ['00:00', '06:00'],
         },
-        203,
+        231,
+    ],
+    'uerra-europe-single-levels-reanalysis-uerra_harmonie': [
+        'reanalysis-uerra-europe-single-levels',
+        {
+            'format': 'grib',
+            'origin': 'uerra_harmonie',
+            'variable': '10m_wind_direction',
+            'year': '2017',
+            'month': '01',
+            'day': '01',
+            'time': ['00:00', '06:00'],
+        },
+        230,
+    ],
+    'uerra-europe-pressure-levels-reanalysis': [
+        'reanalysis-uerra-europe-pressure-levels',
+        {
+            'format': 'grib',
+            'variable': 'geopotential',
+            'pressure_level': '10',
+            'year': '2017',
+            'month': '01',
+            'day': '01',
+            'time': ['00:00', '06:00'],
+        },
+        230,
+    ],
+    'uerra-europe-soil-levels-reanalysis-mescan_surfex': [
+        'reanalysis-uerra-europe-soil-levels',
+        {
+            'format': 'grib',
+            'origin': 'mescan_surfex',
+            'variable': 'volumetric_transpiration_stress_onset',
+            'soil_level': '1',
+            'year': '2017',
+            'month': '01',
+            'day': '01',
+            'time': ['00:00', '06:00'],
+        },
+        230,
+    ],
+    'uerra-europe-soil-levels-reanalysis-uerra_harmonie': [
+        'reanalysis-uerra-europe-soil-levels',
+        {
+            'format': 'grib',
+            'origin': 'uerra_harmonie',
+            'variable': 'soil_temperature',
+            'soil_level': '1',
+            'year': '2017',
+            'month': '01',
+            'day': '01',
+            'time': ['00:00', '06:00'],
+        },
+        231,
     ],
 }
 
