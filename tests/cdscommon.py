@@ -5,7 +5,7 @@ import shutil
 import cdsapi
 
 SAMPLE_DATA_FOLDER = os.path.join(os.path.dirname(__file__), 'sample-data')
-EXTENSIONS = {'grib': '.grib', 'netcdf': '.nc'}
+EXTENSIONS = {'grib': '.grib', 'netcdf': '.nc', 'zip': '.zip'}
 
 
 def ensure_data(dataset, request, folder=SAMPLE_DATA_FOLDER, name='{uuid}.grib'):
