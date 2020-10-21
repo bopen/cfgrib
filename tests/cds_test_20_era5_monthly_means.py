@@ -125,14 +125,3 @@ def test_Dataset(test_file):
     res = cfgrib.xarray_store.open_dataset(path)
     res.to_netcdf(path[:-5] + '.nc')
 
-
-@pytest.mark.skip()
-def test_large_Dataset():
-    dataset, request, key_count = TEST_FILES['era5-pressure-levels-ensemble_members']
-    # make the request large
-    request['day'] = list(range(1, 32))
-    request['time'] = list(['%02d:00' % h for h in range(0, 24, 3)])
-    path = cdscommon.ensure_data(dataset, request, name='cds-' + dataset + '-LARGE-{uuid}.grib')
-
-    res = cfgrib.xarray_store.open_dataset(path)
-    res.to_netcdf(path[:-5] + '.nc')
