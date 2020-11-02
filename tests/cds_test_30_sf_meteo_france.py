@@ -40,7 +40,7 @@ TEST_FILES = {
         {
             'originating_centre': 'meteo_france',
             'variable': 'maximum_2m_temperature_in_the_last_24_hours_anomaly',
-            'product_type': 'monthly_mean',
+            'product_type': 'ensemble_mean',
             'year': '2018',
             'month': ['04', '05'],
             'leadtime_month': ['1', '2'],
@@ -49,12 +49,13 @@ TEST_FILES = {
         },
         211,
     ],
-    'seasonal-monthly-single-levels-monthly_mean-meteo_france': [
-        'seasonal-monthly-single-levels',
+    'seasonal-postprocessed-pressure-levels-meteo_france': [
+        'seasonal-postprocessed-pressure-levels',
         {
             'originating_centre': 'meteo_france',
-            'variable': 'maximum_2m_temperature_in_the_last_24_hours',
-            'product_type': 'monthly_mean',
+            'variable': 'temperature_anomaly',
+            'product_type': 'ensemble_mean',
+            'pressure_level': ['500', '850'],
             'year': '2018',
             'month': ['04', '05'],
             'leadtime_month': ['1', '2'],
@@ -77,12 +78,13 @@ TEST_FILES = {
         },
         211,
     ],
-    'seasonal-monthly-single-levels-hindcast_climate_mean-meteo_france': [
-        'seasonal-monthly-single-levels',
+    'seasonal-monthly-pressure-levels-ensemble_mean-meteo_france': [
+        'seasonal-monthly-pressure-levels',
         {
             'originating_centre': 'meteo_france',
-            'variable': 'maximum_2m_temperature_in_the_last_24_hours',
-            'product_type': 'hindcast_climate_mean',
+            'variable': 'temperature',
+            'product_type': 'ensemble_mean',
+            'pressure_level': ['500', '850'],
             'year': '2018',
             'month': ['04', '05'],
             'leadtime_month': ['1', '2'],
