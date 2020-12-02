@@ -12,11 +12,10 @@ Features with development status **Beta**:
 
 - enables the ``engine='cfgrib'`` option to read GRIB files with *xarray*,
 - reads most GRIB 1 and 2 files including heterogeneous ones with ``cfgrib.open_datasets``,
-- supports all modern versions of Python 3.7, 3.6, 3.5 and PyPy3,
+- supports all modern versions of Python 3.9, 3.8, 3.7, 3.6 and PyPy3,
 - the 0.9.6.x series with support for Python 2 will stay active and receive critical bugfixes,
 - works on *Linux*, *MacOS* and *Windows*, the *ecCodes* C-library is the only binary dependency,
 - conda-forge package on all supported platforms,
-- PyPI package with no install time build (binds via *CFFI* ABI mode),
 - reads the data lazily and efficiently in terms of both memory usage and disk access,
 - allows larger-than-memory and distributed processing via *dask*,
 - supports translating coordinates to different data models and naming conventions,
@@ -54,29 +53,14 @@ Python package from *PyPI* with::
 Binary dependencies
 -------------------
 
-The Python module depends on the ECMWF *ecCodes* binary library
-that must be installed on the system and accessible as a shared library.
-Some Linux distributions ship a binary version that may be installed with the standard package manager.
-On Ubuntu 18.04 use the command::
-
-    $ sudo apt-get install libeccodes0
-
-On a MacOS with HomeBrew use::
-
-    $ brew install eccodes
-
-Or if you manage binary packages with *Conda* use::
-
-    $ conda install -c conda-forge eccodes
-
-As an alternative you may install the official source distribution
-by following the instructions at
-https://software.ecmwf.int/wiki/display/ECC/ecCodes+installation
+The Python module depends on the `eccodes python package <https://pypi.org/project/eccodes/>`_
+to access the ECMWF *ecCodes* binary library,
+when not using *conda* please follow the *System dependencies* section there.
 
 You may run a simple selfcheck command to ensure that your system is set up correctly::
 
     $ python -m cfgrib selfcheck
-    Found: ecCodes v2.12.0.
+    Found: ecCodes v2.19.0.
     Your system is ready.
 
 
@@ -160,7 +144,7 @@ Details like names and units of the coordinates are particularly important becau
 translate CF compliant coordinates, like the one provided by *cfgrib*, to a user-defined
 custom data model with set ``out_name``, ``units`` and ``stored_direction``.
 
-For example to translate a *cfgrib* styled `xr.Dataset` to the classic *ECMWF* coordinate
+For example to translate a *cfgrib* styled ``xr.Dataset`` to the classic *ECMWF* coordinate
 naming conventions you can:
 
 .. code-block: python
@@ -804,15 +788,9 @@ Project resources
 Development   https://github.com/ecmwf/cfgrib
 Download      https://pypi.org/project/cfgrib
 User support  https://stackoverflow.com/search?q=cfgrib
-Code quality  .. image:: https://api.travis-ci.org/ecmwf/cfgrib.svg?branch=master
-                :target: https://travis-ci.org/ecmwf/cfgrib/branches
-                :alt: Build Status on Travis CI
-              .. image:: https://ci.appveyor.com/api/projects/status/github/ecmwf/cfgrib?svg=true&passingText=passing&failingText=failing&pendingText=pending
-                :target: https://ci.appveyor.com/project/StephanSiemen/cfgrib
-                :alt: Build Status on Appveyor
-              .. image:: https://coveralls.io/repos/ecmwf/cfgrib/badge.svg?branch=master&service=github
-                :target: https://coveralls.io/github/ecmwf/cfgrib
-                :alt: Coverage Status on Coveralls
+Code quality  .. image:: https://codecov.io/gh/ecmwf/cfgrib/branch/master/graph/badge.svg
+                :target: https://codecov.io/gh/ecmwf/cfgrib
+                :alt: Coverage status on Codecov
 ============= =========================================================
 
 
@@ -832,8 +810,8 @@ Lead developer:
 
 Main contributors:
 
-- Baudouin Raoult - `ECMWF <https://ecmwf.int>`_
 - `Aureliana Barghini <https://github.com/aurghs>`_ - B-Open
+- `Baudouin Raoult <https://github.com/b8raoult>`_ - `ECMWF <https://ecmwf.int>`_
 - `Iain Russell <https://github.com/iainrussell>`_ - ECMWF
 - `Leonardo Barcaroli <https://github.com/leophys>`_ - B-Open
 
